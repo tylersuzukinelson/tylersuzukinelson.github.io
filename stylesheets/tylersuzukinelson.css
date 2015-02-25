@@ -8,3 +8,27 @@ body {
   top: -85px;
   visibility: hidden;
 }
+
+.project {
+  display: inline-block;
+  margin: 25px;
+  width: 375px;
+  height: 281px;
+}
+
+.project img {
+  width: 375px;
+  height: 281px;
+  float: left;
+}
+
+.project .project-description {
+  background-color: #FFFFFF;
+  width: 375px;
+  height: 281px;
+  float: right;
+  margin-left: -375px;
+  text-align: left;
+  overflow: auto;
+  display: none;
+}
