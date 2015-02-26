@@ -8,6 +8,20 @@ $(document).ready(function() {
     $(this).find('.project-description').fadeOut();
   });
 
+  $('.school').on('click', '.showTopics', function() {
+    $(this).removeClass('showTopics').show();
+    $(this).addClass('hideTopics').show();
+    $(this).text('Hide Topics Covered');
+    $(this).siblings('.topics').show();
+  });
+
+  $('.school').on('click', '.hideTopics', function() {
+    $(this).removeClass('hideTopics').show();
+    $(this).addClass('showTopics').show();
+    $(this).text('Show Topics Covered');
+    $(this).siblings('.topics').hide();
+  });
+
   $('.school').on('click', '.showClasses', function() {
     $(this).removeClass('showClasses').show();
     $(this).addClass('hideClasses').show();
