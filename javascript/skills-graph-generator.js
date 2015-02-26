@@ -1,3 +1,5 @@
+var STARTING_YEAR = 2002;
+var CURRENT_YEAR = 2015;
 var skills = [
   ['ActiveRecord',1,['2015']],
   ['AJAX',1,['2015']],
@@ -10,17 +12,17 @@ var skills = [
   ['HTML5',1,['2002-2015']],
   ['Integrated Circuits',1,['2009','2014']],
   ['Java',1,['2009-2011']],
-  ['Javascript',1,['2015']],
-  ['jQuery',1,['2015']],
+  ['Javascript',2,['2015']],
+  ['jQuery',2,['2015']],
   ['Perl',1,['2010-2014']],
-  ['PHP',0,['2004-2014']],
+  ['PHP',1,['2004-2014']],
   ['phpBB',0,['2007-2010']],
   ['PostgreSQL',1,['2015']],
   ['Python',1,['2013-2014']],
   ['MySQL',1,['2004-2014']],
   ['Notepad++',1,['2010-2014']],
   ['Rails',2,['2015']],
-  ['Ruby',1,['2015']],
+  ['Ruby',2,['2015']],
   ['Sublime',1,['2015']],
   ['Wordpress',1,['2005-2014']],
   ['Vim',1,['2013-2014']]
@@ -33,17 +35,16 @@ var colors = {
   '3': 'success'
 };
 
-var current_year = 2015;
-var total_years = current_year - 2002 + 1;
-var cw = 100 / (total_years + 1);
 var flagFound = false;
+var TOTAL_YEARS = CURRENT_YEAR - STARTING_YEAR + 1;
+var CW = 100 / (TOTAL_YEARS + 1);
 
 var graph = "<table class=\"table table-condensed\">";
 
 // Generate the legend
-graph += "<thead><tr><th style=\"width: " + cw + "%\"></th>";
-for (var year = 2002; year <= current_year; year++) {
-  graph += "<th style=\"width: " + cw + "%\">" + year + "</th>";
+graph += "<thead><tr><th style=\"width: " + CW + "%\"></th>";
+for (var year = STARTING_YEAR; year <= CURRENT_YEAR; year++) {
+  graph += "<th style=\"width: " + CW + "%\">" + year + "</th>";
 }
 graph += "</tr></thead><tbody>";
 
@@ -51,8 +52,8 @@ graph += "</tr></thead><tbody>";
 for (var competence = 3; competence >= 0; competence--) {
   for (var skill = 0; skill < skills.length; skill++) {
     if (skills[skill][1] == competence) {
-      graph += "<tr><td style=\"width: " + cw + "\"><strong>" + skills[skill][0] + "</strong></td>";
-      for (var year = 2002; year <= current_year; year++) {
+      graph += "<tr><td style=\"width: " + CW + "\"><strong>" + skills[skill][0] + "</strong></td>";
+      for (var year = STARTING_YEAR; year <= CURRENT_YEAR; year++) {
         flagFound = false;
         for (var years = 0; years < skills[skill][2].length; years++) {
           var tmp_years = skills[skill][2][years].split('-');
@@ -69,9 +70,9 @@ for (var competence = 3; competence >= 0; competence--) {
           }
         }
         if (flagFound) {
-          graph += "<td class=\"" + colors[competence] + "\" style=\"width: " + cw + "\"></td>";
+          graph += "<td class=\"" + colors[competence] + "\" style=\"width: " + CW + "\"></td>";
         } else {
-          graph += "<td style=\"width: " + cw + "\"></td>";
+          graph += "<td style=\"width: " + CW + "\"></td>";
         }
       }
       graph += "</tr>";
