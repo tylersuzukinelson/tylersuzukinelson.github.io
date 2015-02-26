@@ -36,4 +36,18 @@ $(document).ready(function() {
     $(this).siblings('.classes').hide();
   });
 
+  $('.school').on('click', '.showAwards', function() {
+    $(this).removeClass('showAwards').show();
+    $(this).addClass('hideAwards').show();
+    $(this).text('Hide Awards');
+    $(this).siblings('.awards').show();
+  });
+
+  $('.school').on('click', '.hideAwards', function() {
+    $(this).removeClass('hideAwards').show();
+    $(this).addClass('showAwards').show();
+    $(this).text('Show Awards');
+    $(this).siblings('.awards').hide();
+  });
+
 });
