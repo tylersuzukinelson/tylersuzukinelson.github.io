@@ -50,4 +50,20 @@ $(document).ready(function() {
     $(this).siblings('.awards').hide();
   });
 
+  $('#toggleSkillsMinimal').on('click', function() {
+    $('#skillsTable td.danger').parent().toggle();
+  });
+
+  $('#toggleSkillsBasic').on('click', function() {
+    $('#skillsTable td.warning').parent().toggle();
+  });
+
+  $('#toggleSkillsIntermediate').on('click', function() {
+    $('#skillsTable td.info').parent().toggle();
+  });
+
+  $('#toggleSkillsProficient').on('click', function() {
+    $('#skillsTable td.success').parent().toggle();
+  });
+
 });
