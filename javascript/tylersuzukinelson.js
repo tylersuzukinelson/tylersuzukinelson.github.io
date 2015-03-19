@@ -66,7 +66,8 @@ $(document).ready(function() {
     $('#skillsTable td.success').parent().toggle();
   });
 
-  $('.glyphicon-envelope').on('click', function() {
+  $('.glyphicon-envelope').on('click', function(event) {
+    event.preventDefault();
     var z = "t";
     var y = "y";
     var x = "l";
