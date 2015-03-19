@@ -66,4 +66,25 @@ $(document).ready(function() {
     $('#skillsTable td.success').parent().toggle();
   });
 
+  $('.glyphicon-envelope').on('click', function() {
+    var z = "t";
+    var y = "y";
+    var x = "l";
+    var w = "e";
+    var v = "r";
+    var u = ".";
+    var t = "n";
+    var s = "s";
+    var r = "o";
+    var q = "@";
+    var p = "a";
+    var o = "u";
+    var n = "m";
+    var m = "i";
+    var l = "b";
+    var k = "c";
+    var _tmp_var_woo = z+y+x+w+v+u+t+w+x+s+r+t+q+p+x+o+n+t+m+u+o+l+k+u+k+p;
+    window.prompt("Copy to clipboard: Ctrl/Cmd+C, Enter", _tmp_var_woo);
+  });
+
 });
