@@ -1,5 +1,27 @@
 $(document).ready(function() {
 
+  hide_all_apps = function() {
+    $('#app_zomato').hide();
+    $('#app_yelp').hide();
+    $('#remove_apps').hide();
+  };
+
+  $('#a_app_zomato').on('click', function() {
+    hide_all_apps();
+    $('#app_zomato').show();
+    $('#remove_apps').show();
+  });
+
+  $('#a_app_yelp').on('click', function() {
+    hide_all_apps();
+    $('#app_yelp').show();
+    $('#remove_apps').show();
+  });
+
+  $('#a_remove_apps').on('click', function() {
+    hide_all_apps();
+  });
+
   $('.project').on('mouseenter', function() {
     $(this).find('.project-description').fadeIn();
   });
